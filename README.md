@@ -12,7 +12,7 @@
 ##### Quick List Notes:
 - Validation is in place through Laravel Requests.
 - Calculator does work with `float` numbers.
-- Animations are done with [animate.css](#https://animate.style/)
+- Animations are done with <a href="https://animate.style">animate.css</a>
 - Relationship set on operator/equation table and in use.
 - I had never used Laravel components, so I took this opportunity to learn and use them.
 - Styles is not in SASS as the requirement being no javascript, I did not setup a preprocessor. This is also while animate is running off a CDN.
@@ -40,7 +40,7 @@ Assumption:
 
 ## <a name="laravel"></a> Laravel Setup
 
-This will just be your normal laravel installation, nothing special but thought I would address it.
+This will just be your normal laravel installation, nothing special but thought I would address it. But the laravel root directory is in `/src` folder in this repo.
 
 ## <a name="misc"></a> Misc Information
 
