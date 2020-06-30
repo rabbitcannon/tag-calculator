@@ -1,0 +1,117 @@
+/**
+    Table of Contents
+    ------------------------
+    CS01 - Page Settings
+    CS02 - Centered Content
+    CS03 - Form Elements
+    CS04 - Top 10 Results Table
+    CS05 - Text Related
+**/
+
+
+/** CS01 Page Settings
+ ===================== **/
+html, body {
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    overflow: auto;
+}
+
+body {
+    background-color: #000;
+    background-image: url("/assets/images/tacos.jpg");
+}
+
+form label {
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+}
+
+/** CS02 Centered Content
+ ===================== **/
+.content {
+    margin-top: 15%;
+    text-align: center;
+    z-index: 998;
+}
+
+.overlay {
+    width: 100%;
+    min-height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.title-box {
+    color: #e49d38;
+    margin-top: 15px;
+}
+
+.title-box h3 {
+    font-family: 'Nunito', sans-serif;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+
+/** CS03 Form Elements
+ ===================== **/
+#button-container button {
+    background-color: #6A7908;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+#button-container button:first-child {
+    margin-right: 10px;
+}
+
+.invalid-input {
+    background-color: #f6e3e0;
+    border: 1px solid #FA7A65;
+}
+
+
+/** CS04 Top 10 Results Table
+ ===================== **/
+.table-pad-top {
+    margin-top: 25px;
+}
+
+table thead {
+    border-color: #160B08;
+    border-bottom: 1px solid #e49d38;
+}
+table tbody {
+    border-color: #160B08;
+}
+
+table tbody tr td {
+    background-color: #160B08;
+    color: #e49d38;
+}
+
+table thead tr th {
+    color: #e49d38;
+    background-color: #160b08;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/** CS05 Text Related
+ ===================== **/
+.alert-text {
+    color: red;
+    font-weight: bold;
+}

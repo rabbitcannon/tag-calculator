@@ -1,0 +1,95 @@
+version: "3.4"
+
+services:
+
+###########################################################
+# NGINX
+###########################################################
+  nginx:
+    image: nginx:stable-alpine
+    container_name: tag_nginx
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www
+      - ./nginx/default.conf:/etc/nginx/conf.d/defaul.conf
+      - ./nginx/logs:/var/log/nginx:rw
+    depends_on:
+      - php
+      - mysql
+    links:
+      - redis
+    networks:
+      - tag_network
+
+  ###########################################################
+  # MYSQL
+  ###########################################################
+  mysql:
+    image: mysql:latest
+    container_name: tag_mysql
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: tag_database
+      MYSQL_USER: db_user1223
+      MYSQL_PASSWORD: taco_baby
+      MYSQL_ROOT_PASSWORD: root_taco_baby
+      REDIS_PORT: 6379
+      SERVICE_TAG: dev
+      SERVICE_NAME: mysql
+    networks:
+      - tag_network
+
+  ###########################################################
+  # PHP
+  ###########################################################
+  php:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    container_name: tag_php
+    restart: always
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mysql
+    networks:
+      - tag_network
+
+  ###########################################################
+  # Redis
+  ###########################################################
+  redis:
+    image: redis:latest
+    container_name: tag_redis
+    restart: always
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - tag_network
+
+###########################################################
+# Redis
+###########################################################
+volumes:
+  mysql-data:
+  redis-data:
+
+###########################################################
+# Networks
+###########################################################
+networks:
+  tag_network:
+    driver: bridge
