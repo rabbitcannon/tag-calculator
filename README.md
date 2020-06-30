@@ -36,7 +36,7 @@ Assumption:
 3. Run the command `docker-compose up`
     - If you would like this to not show it running, run in detached mode with `docker-compose up -d`
 4. Navigate to the container once they are built using: `docker exec -it tag_php bash` when bashing into the container you are already in the laravel root folder.
-    - From here you can do your normal laravel set up: i.e. `composer install`, `php artisan migrate --seed` and appropriate permissions.
+    - From here you can do your normal laravel set up: i.e. `composer install`, `php artisan migrate --seed`, renaming `.env.example` to `.env` and appropriate permissions. Please note I have the docker connections setup in the `.env.example` file, so you didn't thave to do much work.
 
 ## <a name="laravel"></a> Laravel Setup
 
