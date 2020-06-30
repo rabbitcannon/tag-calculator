@@ -31,9 +31,12 @@ Assumption:
 - You have docker installed, if not you can download [here](#https://www.docker.com/products/docker-desktop).
     - This should also install docker-compose needed for automation.
 
-If you'd like to bash into the container, the command is `docker exec -it tag_php bash`
-
-If you want to run migrations, use the command above and then as normal `php artisan migrate --seed` because you are already mounted into the laravel root.
+1. Clone the repo
+2. Change the directory into your cloned repo
+3. Run the command `docker-compose up`
+    - If you would like this to not show it running, run in detached mode with `docker-compose up -d`
+4. Navigate to the container once they are built using: `docker exec -it tag_php bash` when bashing into the container you are already in the laravel root folder.
+    - From here you can do your normal laravel set up: i.e. `composer install`, `php artisan migrate --seed` and appropriate permissions.
 
 ## <a name="laravel"></a> Laravel Setup
 

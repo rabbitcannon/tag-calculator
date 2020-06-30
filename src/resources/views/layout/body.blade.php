@@ -9,7 +9,6 @@
                 <h3>Let's calculate some tacos</h3>
             </div>
 
-                {{ dd($data) }}
             @include('calculator.form')
 
             @if(count($results) > 0)

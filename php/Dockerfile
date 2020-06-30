@@ -13,7 +13,6 @@ RUN curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/bin/ --filename=composer
 
 ### Run laravel commands ############################
-RUN composer update
 #COPY ./php/docker-entrypoint.sh /docker-entrypoint.sh
 #RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 #
