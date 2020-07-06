@@ -13,7 +13,7 @@
             <tbody>
                 @foreach($results as $result)
                     <tr class="">
-                        <td>{{ $result->first_amount }} {{ $result->operator->operator }} {{ $result->first_amount }}</td>
+                        <td>{{ $result->first_amount }} {{ $result->operator->operator }} {{ $result->second_amount }}</td>
                         <td>{{ $result->result }}</td>
                         <td>{{ $result->created_at }}</td>
                     </tr>
